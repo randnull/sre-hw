@@ -143,4 +143,17 @@ spec:
 Метрики по адресу: oncall.local/metrics
 ![Иллюстрация к проекту](https://github.com/randnull/sre-hw/blob/main/photo/oncall-metrics.png)
 
+Конфигурация prometheus.yml
+
+```
+global:
+  scrape_interval: 15s
+scrape_configs:
+- job_name: 'prometheus'
+  scrape_interval: 30s
+  scrape_timeout: 20s
+  static_configs:
+    - targets: ['oncall.local:80']
+```
+
 
